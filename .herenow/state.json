@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "fern-entry-m2cf": {
+      "siteUrl": "https://fern-entry-m2cf.here.now/",
+      "claimToken": "9ab0b6292737c5697e6fb37ba9c3e23d7cf2698bb6c345a2f3b043006a0f84fe",
+      "claimUrl": "https://here.now/claim?slug=fern-entry-m2cf&token=9ab0b6292737c5697e6fb37ba9c3e23d7cf2698bb6c345a2f3b043006a0f84fe",
+      "expiresAt": "2026-08-05T20:15:21.498Z"
+    }
+  }
+}

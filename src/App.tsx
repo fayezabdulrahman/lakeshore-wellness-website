@@ -1,4 +1,9 @@
-import { useEffect, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   ArrowRight,
   CalendarDays,
@@ -23,6 +28,8 @@ import {
   offers,
   serviceCategories,
 } from "./data";
+import { FounderPerspective } from "./FounderPerspective";
+import { useGsapPolish } from "./useGsapPolish";
 
 function PageMeta({
   title,
@@ -76,7 +83,7 @@ function Header() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => setOpen(false), [location.pathname]);
+  useEffect(() => setOpen(false), [location.hash, location.pathname]);
 
   return (
     <header className="site-header">
@@ -92,8 +99,25 @@ function Header() {
           {open ? <X /> : <Menu />}
         </button>
         <nav className={open ? "site-nav is-open" : "site-nav"} aria-label="Main navigation">
-          <NavLink to="/">Home</NavLink>
-          <Link to="/#about">About</Link>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive && !location.hash ? "active" : ""
+            }
+          >
+            Home
+          </NavLink>
+          <Link
+            to="/#about"
+            className={
+              location.pathname === "/" && location.hash === "#about"
+                ? "active"
+                : undefined
+            }
+          >
+            About
+          </Link>
           <NavLink to="/services">Services</NavLink>
           <BookingLink className="button button-small" />
         </nav>
@@ -175,47 +199,45 @@ function SectionTitle({
 }
 
 function HomePage() {
+  const pageRef = useRef<HTMLElement>(null);
+  useGsapPolish(pageRef);
+
   return (
     <>
       <PageMeta
         title="Lakeshore Wellness — Wellness built for your team"
         description="Bespoke workplace wellness programmes, masterclasses and experiences for teams across Ireland."
       />
-      <main>
+      <main className="page-canvas" ref={pageRef}>
         <section className="hero">
-          <div className="shell hero-grid">
+          <div className="shell hero-stage">
             <div className="hero-copy">
-              <p className="eyebrow">Workplace wellness · Ireland</p>
-              <h1>
+              <p className="eyebrow motion-intro">
+                Workplace wellness · Ireland
+              </p>
+              <h1 className="motion-intro">
                 Wellness built
                 <br />
                 <em>for your team.</em>
               </h1>
-              <p className="hero-lead">
+              <p className="hero-lead motion-intro">
                 Bespoke programmes and uplifting experiences that help people
                 feel supported, connected and ready to thrive.
               </p>
-              <div className="hero-actions">
+              <div className="hero-actions motion-intro">
                 <BookingLink />
                 <Link className="text-link" to="/services">
                   Explore our services <ChevronRight size={17} />
                 </Link>
               </div>
-              <div className="delivery-note">
-                <span>In person</span>
-                <span>Online</span>
-                <span>Hybrid</span>
-              </div>
             </div>
-            <div className="hero-visual">
-              <div className="image-frame">
-                <img
-                  src="/images/team-wellness.avif"
-                  alt="A workplace team taking part in a group wellness session"
-                />
-              </div>
-              <div className="hero-card">
-                <img src="/images/lakeshore-mark.png" alt="" />
+            <div className="hero-media gsap-image-reveal">
+              <img
+                src="/images/team-wellness.avif"
+                alt="A workplace team taking part in a group wellness session"
+              />
+              <div className="hero-media-note">
+                <span>In person · Online · Hybrid</span>
                 <span>Creating healthier ways to work since 2014</span>
               </div>
             </div>
@@ -257,10 +279,18 @@ function HomePage() {
 
         <section className="section intro">
           <div className="shell intro-grid">
-            <SectionTitle
-              eyebrow="A considered approach"
-              title="Wellbeing that feels human — and works in the real world."
-            />
+            <div className="section-title intro-title">
+              <p className="eyebrow">A considered approach</p>
+              <h2>
+                Wellbeing that feels{" "}
+                <span
+                  className="inline-heading-image"
+                  role="img"
+                  aria-label="People sharing a wellness experience"
+                />
+                human.
+              </h2>
+            </div>
             <div className="rich-copy">
               <p>
                 Lakeshore Wellness curates experiences around your organisation,
@@ -287,8 +317,10 @@ function HomePage() {
             />
             <div className="offer-grid">
               {offers.map((offer, index) => (
-                <article className="offer-card" key={offer.title}>
-                  <div className="offer-number">0{index + 1}</div>
+                <article
+                  className={`offer-card offer-card-${index + 1}`}
+                  key={offer.title}
+                >
                   <p className="eyebrow">{offer.eyebrow}</p>
                   <h3>{offer.title}</h3>
                   <p>{offer.description}</p>
@@ -303,7 +335,7 @@ function HomePage() {
 
         <section className="section impact">
           <div className="shell impact-grid">
-            <div className="impact-image">
+            <div className="impact-image gsap-image-reveal">
               <img
                 src="/images/group-discussion.jpg"
                 alt="A team taking part in a facilitated group discussion"
@@ -339,40 +371,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="section about" id="about">
-          <div className="shell about-grid">
-            <div className="portrait-wrap">
-              <div className="portrait-backdrop" />
-              <img
-                src="/images/yvonne-skelly.jpg"
-                alt="Yvonne Skelly, founder of Lakeshore Wellness"
-                loading="lazy"
-              />
-              <div className="portrait-caption">Yvonne Skelly · Founder</div>
-            </div>
-            <div className="about-copy">
-              <p className="eyebrow">Meet Yvonne</p>
-              <h2>A people-first vision for workplace wellness.</h2>
-              <p>
-                Yvonne Skelly is a wellness entrepreneur, international speaker
-                and facilitator whose career has moved from project management
-                and broadcasting into full-time entrepreneurship.
-              </p>
-              <p>
-                Over the past twelve years, she has built a trusted community of
-                passionate facilitators and therapists. Together, they create
-                thoughtful experiences grounded in four values.
-              </p>
-              <div className="values">
-                {["Co-creation", "Collaboration", "Community", "Connection"].map(
-                  (value) => (
-                    <span key={value}>{value}</span>
-                  ),
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
+        <FounderPerspective />
 
         <CallToAction />
       </main>
@@ -404,13 +403,16 @@ function CallToAction() {
 }
 
 function ServicesPage() {
+  const pageRef = useRef<HTMLElement>(null);
+  useGsapPolish(pageRef);
+
   return (
     <>
       <PageMeta
         title="Wellness Services — Lakeshore Wellness"
         description="Explore bespoke workplace wellness programmes, specialist masterclasses, experiences and private retreats."
       />
-      <main>
+      <main className="page-canvas" ref={pageRef}>
         <section className="page-hero">
           <div className="shell page-hero-grid">
             <div>
@@ -435,9 +437,11 @@ function ServicesPage() {
         <section className="section core-offers">
           <div className="shell">
             <div className="wide-offer-grid">
-              {offers.map((offer, index) => (
-                <article key={offer.title}>
-                  <span className="offer-index">0{index + 1}</span>
+              {offers.map((offer) => (
+                <article
+                  className="gsap-stack-card"
+                  key={offer.title}
+                >
                   <p className="eyebrow">{offer.eyebrow}</p>
                   <h2>{offer.title}</h2>
                   <p>{offer.description}</p>
@@ -467,10 +471,14 @@ function ServicesPage() {
               copy="Choose a focused session or combine complementary topics into a programme. Open each category to explore the possibilities."
             />
             <div className="category-list">
-              {serviceCategories.map((category) => {
+              {serviceCategories.map((category, index) => {
                 const Icon = category.icon;
                 return (
-                  <details key={category.title}>
+                  <details
+                    key={category.title}
+                    name="service-categories"
+                    open={index === 0 ? true : undefined}
+                  >
                     <summary>
                       <span className="category-icon">
                         <Icon />
