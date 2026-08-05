@@ -87,38 +87,30 @@ function TrustedLogoMarquee() {
   useEffect(() => {
     const marquee = marqueeRef.current;
 
-    if (!marquee || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (!marquee) {
       return;
     }
 
-    let animationFrame = 0;
-    let previousTime = performance.now();
-
-    const autoScroll = (currentTime: number) => {
+    const autoScroll = () => {
       const primaryGroup = marquee.querySelector<HTMLElement>(".logo-group");
       const groupWidth = primaryGroup?.offsetWidth ?? 0;
-      const elapsed = Math.min(currentTime - previousTime, 50);
 
-      previousTime = currentTime;
-
-      if (groupWidth && currentTime >= interactionUntilRef.current) {
-        marquee.scrollLeft += (groupWidth / 34000) * elapsed;
+      if (groupWidth && Date.now() >= interactionUntilRef.current) {
+        marquee.scrollLeft += 1;
 
         if (marquee.scrollLeft >= groupWidth) {
           marquee.scrollLeft -= groupWidth;
         }
       }
-
-      animationFrame = window.requestAnimationFrame(autoScroll);
     };
 
-    animationFrame = window.requestAnimationFrame(autoScroll);
+    const autoScrollTimer = window.setInterval(autoScroll, 20);
 
-    return () => window.cancelAnimationFrame(animationFrame);
+    return () => window.clearInterval(autoScrollTimer);
   }, []);
 
   const deferAutoScroll = (milliseconds = 700) => {
-    interactionUntilRef.current = performance.now() + milliseconds;
+    interactionUntilRef.current = Date.now() + milliseconds;
   };
 
   return (

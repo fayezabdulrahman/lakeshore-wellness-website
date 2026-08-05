@@ -2045,7 +2045,4 @@ h3 {
     transform: none;
   }
 
-  .logo-group[aria-hidden="true"] {
-    display: none;
-  }
 }
