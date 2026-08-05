@@ -1,6 +1,6 @@
-# Lakeshore Wellness
+# Workspace Wellness
 
-An elegant, responsive website for Lakeshore Wellness, built with React, Vite,
+An elegant, responsive website for Workspace Wellness, built with React, Vite,
 TypeScript and Tailwind CSS.
 
 ## Local development

@@ -6,7 +6,7 @@ export function FounderPerspective() {
           <div className="perspective-image">
             <img
               src="/images/yvonne-skelly.jpg"
-              alt="Yvonne Skelly, founder of Lakeshore Wellness"
+              alt="Yvonne Skelly, founder of Workspace Wellness"
               loading="lazy"
             />
           </div>
@@ -21,9 +21,9 @@ export function FounderPerspective() {
             <h2>Wellbeing should feel human — and work in the real world.</h2>
           </div>
           <p>
-            Lakeshore Wellness was founded by Yvonne Skelly, an Experienced Wellness Entrepreneur, 
-            International Speaker and Facilitator. With a diverse background spanning pharmaceuticals, 
-            project management, media and entrepreneurship, Yvonne has delivered events across Ireland, the UK, Europe, the USA and Canada 
+            Workspace Wellness was founded by Yvonne Skelly, an Experienced Wellness Entrepreneur,
+            International Speaker and Facilitator. With a diverse background spanning pharmaceuticals,
+            project management, media and entrepreneurship, Yvonne has delivered events across Ireland, the UK, Europe, the USA and Canada
             for organisations including Deloitte, Fidelity Investments, Tusla, TU Dublin and ISG.
           </p>
           <br></br>

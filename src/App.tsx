@@ -49,10 +49,10 @@ function PageMeta({
 
 function Logo() {
   return (
-    <Link className="brand" to="/" aria-label="Lakeshore Wellness home">
+    <Link className="brand" to="/" aria-label="Workspace Wellness home">
       <img src="/images/lakeshore-mark.png" alt="" />
       <span>
-        Lakeshore
+        Workspace
         <small>Wellness</small>
       </span>
     </Link>
@@ -76,6 +76,126 @@ function BookingLink({
       {children}
       <ArrowRight size={17} aria-hidden="true" />
     </a>
+  );
+}
+
+function TrustedLogoMarquee() {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const dragStartRef = useRef<{ scrollLeft: number; x: number } | null>(null);
+  const interactionUntilRef = useRef(0);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+
+    if (!marquee || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    let animationFrame = 0;
+    let previousTime = performance.now();
+
+    const autoScroll = (currentTime: number) => {
+      const primaryGroup = marquee.querySelector<HTMLElement>(".logo-group");
+      const groupWidth = primaryGroup?.offsetWidth ?? 0;
+      const elapsed = Math.min(currentTime - previousTime, 50);
+
+      previousTime = currentTime;
+
+      if (groupWidth && currentTime >= interactionUntilRef.current) {
+        marquee.scrollLeft += (groupWidth / 34000) * elapsed;
+
+        if (marquee.scrollLeft >= groupWidth) {
+          marquee.scrollLeft -= groupWidth;
+        }
+      }
+
+      animationFrame = window.requestAnimationFrame(autoScroll);
+    };
+
+    animationFrame = window.requestAnimationFrame(autoScroll);
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, []);
+
+  const deferAutoScroll = (milliseconds = 700) => {
+    interactionUntilRef.current = performance.now() + milliseconds;
+  };
+
+  return (
+    <div
+      className="logo-marquee"
+      ref={marqueeRef}
+      role="region"
+      aria-label="Trusted clients. Scroll horizontally to browse."
+      tabIndex={0}
+      onWheel={() => deferAutoScroll()}
+      onTouchStart={() => deferAutoScroll(1200)}
+      onTouchMove={() => deferAutoScroll(1200)}
+      onPointerDown={(event) => {
+        if (event.pointerType !== "mouse") return;
+
+        dragStartRef.current = {
+          scrollLeft: event.currentTarget.scrollLeft,
+          x: event.clientX,
+        };
+        event.currentTarget.classList.add("is-dragging");
+        event.currentTarget.setPointerCapture(event.pointerId);
+        deferAutoScroll(1200);
+      }}
+      onPointerMove={(event) => {
+        if (!dragStartRef.current) return;
+
+        event.currentTarget.scrollLeft =
+          dragStartRef.current.scrollLeft -
+          (event.clientX - dragStartRef.current.x);
+        deferAutoScroll(1200);
+      }}
+      onPointerUp={(event) => {
+        dragStartRef.current = null;
+        event.currentTarget.classList.remove("is-dragging");
+        event.currentTarget.releasePointerCapture(event.pointerId);
+      }}
+      onPointerCancel={(event) => {
+        dragStartRef.current = null;
+        event.currentTarget.classList.remove("is-dragging");
+      }}
+      onKeyDown={(event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+        event.preventDefault();
+        event.currentTarget.scrollBy({
+          left: event.key === "ArrowLeft" ? -180 : 180,
+          behavior: "smooth",
+        });
+        deferAutoScroll(1200);
+      }}
+    >
+      <div className="logo-track">
+        {[false, true].map((duplicate) => (
+          <div
+            className="logo-group"
+            key={duplicate ? "duplicate" : "primary"}
+            aria-hidden={duplicate || undefined}
+          >
+            {clients.map((client) => (
+              <div
+                className="client-logo"
+                key={`${client.name}-${duplicate}`}
+              >
+                {client.logo ? (
+                  <img
+                    src={client.logo}
+                    alt={duplicate ? "" : client.name}
+                  />
+                ) : (
+                  <span className="client-wordmark">{client.name}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -144,8 +264,8 @@ function Footer() {
         </div>
         <div className="footer-links">
           <strong>Contact</strong>
-          <a href="mailto:yvonne@lakeshorewellness.ie">
-            <Mail size={16} /> yvonne@lakeshorewellness.ie
+          <a href="mailto:yvonne@workspacewellness.ie">
+            <Mail size={16} /> yvonne@workspacewellness.ie
           </a>
           <a href="tel:+353870528191">
             <Phone size={16} /> +353 87 052 8191
@@ -155,7 +275,7 @@ function Footer() {
               href="https://www.instagram.com/lakeshorewellnesscentre"
               target="_blank"
               rel="noreferrer"
-              aria-label="Lakeshore Wellness on Instagram"
+              aria-label="Workspace Wellness on Instagram"
             >
               <Instagram />
             </a>
@@ -171,7 +291,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 Lakeshore Wellness</span>
+        <span>© 2026 Workspace Wellness</span>
         <span>West Wicklow, Ireland</span>
       </div>
     </footer>
@@ -205,7 +325,7 @@ function HomePage() {
   return (
     <>
       <PageMeta
-        title="Lakeshore Wellness — Wellness built for your team"
+        title="Workspace Wellness — Wellness built for your team"
         description="Bespoke workplace wellness programmes, masterclasses and experiences for teams across Ireland."
       />
       <main className="page-canvas" ref={pageRef}>
@@ -247,33 +367,7 @@ function HomePage() {
         <section className="trust" aria-label="Selected clients and partners">
           <div className="shell trust-inner">
             <p>Trusted by</p>
-            <div className="logo-marquee">
-              <div className="logo-track">
-                {[false, true].map((duplicate) => (
-                  <div
-                    className="logo-group"
-                    key={duplicate ? "duplicate" : "primary"}
-                    aria-hidden={duplicate || undefined}
-                  >
-                    {clients.map((client) => (
-                      <div
-                        className="client-logo"
-                        key={`${client.name}-${duplicate}`}
-                      >
-                        {client.logo ? (
-                          <img
-                            src={client.logo}
-                            alt={duplicate ? "" : client.name}
-                          />
-                        ) : (
-                          <span className="client-wordmark">{client.name}</span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <TrustedLogoMarquee />
           </div>
         </section>
 
@@ -288,7 +382,7 @@ function HomePage() {
             </div>
             <div className="rich-copy">
               <p>
-                Lakeshore Wellness curates experiences around your organisation,
+                Workspace Wellness curates experiences around your organisation,
                 your people and the outcomes that matter to you. From one
                 memorable session to a year-long programme, every detail is
                 thoughtfully shaped with your team.
@@ -404,7 +498,7 @@ function HomePage() {
               <div className="roi-figure">
                 <span>Average return</span>
                 <strong>€4.70</strong>
-                <small style={{ padding: '14px' }}>for every €1 invested</small>
+                <small>for every €1 invested</small>
               </div>
               <div className="roi-copy">
                 <p className="eyebrow">Return on investment</p>
@@ -448,7 +542,7 @@ function CallToAction() {
         </div>
         <div>
           <p>
-            Tell us what you are working towards. and we’ll help you develop a tailored experience aligned with your people, priorities, and budget.
+            Tell us what you are working towards and we’ll help you develop a tailored experience aligned with your people, priorities, and budget.
           </p>
           <BookingLink>
             <CalendarDays size={17} aria-hidden="true" />
@@ -467,7 +561,7 @@ function ServicesPage() {
   return (
     <>
       <PageMeta
-        title="Wellness Services — Lakeshore Wellness"
+        title="Wellness Services — Workspace Wellness"
         description="Explore bespoke workplace wellness programmes, specialist masterclasses, experiences and private retreats."
       />
       <main className="page-canvas" ref={pageRef}>
@@ -609,15 +703,15 @@ function PrivacyPage() {
   return (
     <>
       <PageMeta
-        title="Privacy — Lakeshore Wellness"
-        description="How Lakeshore Wellness handles personal information and external booking links."
+        title="Privacy — Workspace Wellness"
+        description="How Workspace Wellness handles personal information and external booking links."
       />
       <main className="legal-page">
         <div className="shell legal-shell">
           <p className="eyebrow">Privacy</p>
           <h1>Your privacy matters.</h1>
           <p className="legal-intro">
-            This website is designed to provide information about Lakeshore
+            This website is designed to provide information about Workspace
             Wellness without collecting personal information through forms or
             user accounts.
           </p>
@@ -640,7 +734,7 @@ function PrivacyPage() {
           <section>
             <h2>External links</h2>
             <p>
-              This website links to Instagram, LinkedIn and Calendly. Lakeshore
+              This website links to Instagram, LinkedIn and Calendly. Workspace
               Wellness is not responsible for the privacy practices of external
               websites.
             </p>
@@ -649,8 +743,8 @@ function PrivacyPage() {
             <h2>Questions</h2>
             <p>
               For privacy questions, email{" "}
-              <a href="mailto:yvonne@lakeshorewellness.ie">
-                yvonne@lakeshorewellness.ie
+              <a href="mailto:yvonne@workspacewellness.ie">
+                yvonne@workspacewellness.ie
               </a>
               .
             </p>
