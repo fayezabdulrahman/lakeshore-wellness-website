@@ -260,7 +260,7 @@ function Footer() {
             <Mail size={16} /> yvonne@workspacewellness.ie
           </a>
           <a href="tel:+353870528191">
-            <Phone size={16} /> +353 87 052 8191
+            <Phone size={16} /> +353 87 052 8192
           </a>
           <div className="socials">
             <a
