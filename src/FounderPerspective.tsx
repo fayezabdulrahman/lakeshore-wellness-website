@@ -21,15 +21,16 @@ export function FounderPerspective() {
             <h2>Wellbeing should feel human — and work in the real world.</h2>
           </div>
           <p>
-            Yvonne Skelly is a wellness entrepreneur, international speaker and
-            facilitator whose career has moved from project management and
-            broadcasting into full-time entrepreneurship.
+            Lakeshore Wellness was founded by Yvonne Skelly, an Experienced Wellness Entrepreneur, 
+            International Speaker and Facilitator. With a diverse background spanning pharmaceuticals, 
+            project management, media and entrepreneurship, Yvonne has delivered events across Ireland, the UK, Europe, the USA and Canada 
+            for organisations including Deloitte, Fidelity Investments, Tusla, TU Dublin and ISG.
           </p>
+          <br></br>
           <p>
-            Over the past twelve years, she has built a trusted community of
-            passionate facilitators and therapists. Together, they create
-            thoughtful experiences grounded in co-creation, collaboration,
-            community and connection.
+            Driven by a passion for helping people and organisations reach their potential, 
+            Yvonne has spent more than 12 years building a trusted team of professional wellness facilitators and therapists, 
+            each carefully selected for their expertise, professionalism and dedication.
           </p>
         </div>
       </div>

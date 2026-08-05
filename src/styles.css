@@ -482,6 +482,17 @@ h3 {
   padding-block: 150px;
 }
 
+.intro {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(250, 247, 239, 0.92) 0%,
+      rgba(250, 247, 239, 0.76) 50%,
+      rgba(250, 247, 239, 0.9) 100%
+    ),
+    url("/images/workplace-wellbeing-journaling.jpg") center 54% / cover no-repeat;
+}
+
 .intro-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -517,6 +528,11 @@ h3 {
   line-height: 0.98;
 }
 
+.intro-title h2 em {
+  color: #527460;
+  font-weight: 500;
+}
+
 .inline-heading-image {
   display: inline-block;
   width: clamp(150px, 14vw, 220px);
@@ -525,7 +541,7 @@ h3 {
   border-radius: 18px;
   background:
     linear-gradient(rgba(23, 59, 43, 0.12), rgba(23, 59, 43, 0.12)),
-    url("/images/group-discussion.jpg") center 52% / cover;
+    url("/images/facilitated-wellness-workshop.jpg") center 43% / cover;
   box-shadow: inset 0 0 0 1px rgba(23, 59, 43, 0.14);
   vertical-align: -0.08em;
 }
@@ -719,6 +735,171 @@ h3 {
   line-height: 1.5;
 }
 
+.investment-case {
+  margin-top: 140px;
+}
+
+.investment-heading {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  align-items: start;
+  gap: 70px;
+  margin-bottom: 70px;
+}
+
+.investment-heading .eyebrow {
+  margin-top: 16px;
+  color: var(--sage);
+}
+
+.investment-heading h3 {
+  max-width: 970px;
+  margin: 0;
+  font-size: clamp(52px, 6vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.investment-heading h3 em {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.business-impact-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.9fr 1.2fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.business-impact-grid article {
+  min-height: 360px;
+  padding: 48px 42px 52px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.business-impact-grid article:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.business-impact-grid strong {
+  display: block;
+  margin-bottom: 42px;
+  color: white;
+  font-family: var(--serif);
+  font-size: clamp(64px, 7vw, 96px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+}
+
+.business-impact-grid h4 {
+  max-width: 290px;
+  margin: 0 0 20px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.business-impact-grid p {
+  max-width: 330px;
+  margin: 0;
+  color: #c9d9cd;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.roi-panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: center;
+  gap: 70px;
+  margin-top: 70px;
+  border-radius: 28px;
+  padding: 64px 72px;
+  background:
+    linear-gradient(110deg, rgba(234, 241, 232, 0.98), rgba(175, 196, 178, 0.94)),
+    var(--sage-light);
+  color: var(--forest);
+}
+
+.roi-panel::after {
+  position: absolute;
+  right: -55px;
+  bottom: -72px;
+  width: 250px;
+  height: 250px;
+  background: url("/images/lakeshore-mark.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.roi-figure,
+.roi-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.roi-figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.roi-figure > span,
+.roi-figure small {
+  color: #456052;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.roi-figure strong {
+  margin: 8px 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(82px, 10vw, 138px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.065em;
+  line-height: 0.82;
+}
+
+.roi-copy .eyebrow {
+  color: #456052;
+}
+
+.roi-copy h4 {
+  max-width: 580px;
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.roi-copy > p:last-child {
+  max-width: 610px;
+  margin: 0;
+  color: #405a4b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.impact-source {
+  margin: 18px 0 0;
+  color: rgba(201, 217, 205, 0.72);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .about {
   background: white;
 }
@@ -858,10 +1039,25 @@ h3 {
 }
 
 .cta-section {
+  position: relative;
+  overflow: hidden;
   background: var(--sage);
 }
 
+.cta-brand-mark {
+  position: absolute;
+  right: clamp(32px, 6vw, 110px);
+  bottom: clamp(30px, 5vw, 76px);
+  width: clamp(110px, 11vw, 180px);
+  height: auto;
+  opacity: 0.24;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 .cta {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 100px;
@@ -891,8 +1087,14 @@ h3 {
 .page-hero {
   padding: 120px 0 150px;
   background:
-    radial-gradient(circle at 80% 20%, rgba(189, 211, 229, 0.5), transparent 25%),
-    var(--ivory);
+    radial-gradient(circle at 80% 20%, rgba(189, 211, 229, 0.32), transparent 26%),
+    linear-gradient(
+      90deg,
+      rgba(250, 247, 239, 0.9) 0%,
+      rgba(250, 247, 239, 0.74) 48%,
+      rgba(250, 247, 239, 0.87) 100%
+    ),
+    url("/images/corporate-wellness-reset.jpg") center 52% / cover no-repeat;
 }
 
 .page-hero-grid {
@@ -1389,6 +1591,25 @@ h3 {
     gap: 55px;
   }
 
+  .investment-heading {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .business-impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .business-impact-grid article:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .roi-panel {
+    gap: 40px;
+    padding-inline: 48px;
+  }
+
   .offer-card {
     padding-inline: 34px;
   }
@@ -1532,6 +1753,55 @@ h3 {
 
   .section {
     padding-block: 96px;
+  }
+
+  .investment-case {
+    margin-top: 96px;
+  }
+
+  .investment-heading {
+    margin-bottom: 46px;
+  }
+
+  .investment-heading h3 {
+    font-size: clamp(46px, 13vw, 64px);
+  }
+
+  .business-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-impact-grid article,
+  .business-impact-grid article:nth-child(3) {
+    min-height: 0;
+    grid-column: auto;
+    border-top: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 42px 28px;
+  }
+
+  .business-impact-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .business-impact-grid strong {
+    margin-bottom: 28px;
+  }
+
+  .roi-panel {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    margin-top: 48px;
+    border-radius: 22px;
+    padding: 46px 28px 52px;
+  }
+
+  .roi-panel::after {
+    right: -35px;
+    bottom: -40px;
+    width: 165px;
+    height: 165px;
   }
 
   .intro-grid,
@@ -1734,6 +2004,13 @@ h3 {
   .perspective-statement h2,
   .cta h2 {
     font-size: 40px;
+  }
+
+  .cta-brand-mark {
+    right: 18px;
+    bottom: 14px;
+    width: 66px;
+    opacity: 0.26;
   }
 
   .perspective-media {

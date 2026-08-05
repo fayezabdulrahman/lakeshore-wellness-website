@@ -233,7 +233,7 @@ function HomePage() {
             </div>
             <div className="hero-media gsap-image-reveal">
               <img
-                src="/images/team-wellness.avif"
+                src="/images/workplace-wellbeing-session.jpg"
                 alt="A workplace team taking part in a group wellness session"
               />
               <div className="hero-media-note">
@@ -246,7 +246,7 @@ function HomePage() {
 
         <section className="trust" aria-label="Selected clients and partners">
           <div className="shell trust-inner">
-            <p>Trusted by teams at</p>
+            <p>Trusted by</p>
             <div className="logo-marquee">
               <div className="logo-track">
                 {[false, true].map((duplicate) => (
@@ -283,12 +283,7 @@ function HomePage() {
               <p className="eyebrow">A considered approach</p>
               <h2>
                 Wellbeing that feels{" "}
-                <span
-                  className="inline-heading-image"
-                  role="img"
-                  aria-label="People sharing a wellness experience"
-                />
-                human.
+                <em>human.</em>
               </h2>
             </div>
             <div className="rich-copy">
@@ -337,7 +332,7 @@ function HomePage() {
           <div className="shell impact-grid">
             <div className="impact-image gsap-image-reveal">
               <img
-                src="/images/group-discussion.jpg"
+                src="/images/facilitated-wellness-workshop.jpg"
                 alt="A team taking part in a facilitated group discussion"
                 loading="lazy"
               />
@@ -369,6 +364,64 @@ function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="shell investment-case">
+            <div className="investment-heading">
+              <p className="eyebrow">Why invest in wellbeing?</p>
+              <h3>
+                Better for people. <em>Better for business.</em>
+              </h3>
+            </div>
+
+            <div className="business-impact-grid">
+              <article>
+                <strong>1.5–1.8</strong>
+                <h4>fewer days lost to absence</h4>
+                <p>
+                  Reducing sick leave can save an organisation €250–€350 per
+                  employee each year.
+                </p>
+              </article>
+              <article>
+                <strong>11%</strong>
+                <h4>lower voluntary staff turnover</h4>
+                <p>
+                  Replacing one mid-level employee can cost up to €15K — so
+                  stronger retention saves money and time.
+                </p>
+              </article>
+              <article>
+                <strong>10%</strong>
+                <h4>increase in staff productivity</h4>
+                <p>
+                  Wellbeing and performance are closely linked. When people
+                  feel better, they often work better.
+                </p>
+              </article>
+            </div>
+
+            <aside className="roi-panel" aria-label="Wellness return on investment">
+              <div className="roi-figure">
+                <span>Average return</span>
+                <strong>€4.70</strong>
+                <small style={{ padding: '14px' }}>for every €1 invested</small>
+              </div>
+              <div className="roi-copy">
+                <p className="eyebrow">Return on investment</p>
+                <h4>Investment that can pay its way.</h4>
+                <p>
+                  A Deloitte Ireland review found that workplace wellness
+                  initiatives can deliver an average return of €4.70 for every
+                  €1 invested, driven by productivity gains and cost
+                  reductions.
+                </p>
+              </div>
+            </aside>
+
+            <p className="impact-source">
+              Source: Deloitte Ireland review
+            </p>
+          </div>
         </section>
 
         <FounderPerspective />
@@ -382,6 +435,12 @@ function HomePage() {
 function CallToAction() {
   return (
     <section className="section cta-section">
+      <img
+        className="cta-brand-mark"
+        src="/images/lakeshore-mark.png"
+        alt=""
+        aria-hidden="true"
+      />
       <div className="shell cta">
         <div>
           <p className="eyebrow">Let’s begin</p>
@@ -389,8 +448,7 @@ function CallToAction() {
         </div>
         <div>
           <p>
-            Tell us what you are working towards. We’ll help you shape a
-            thoughtful experience that fits your people, priorities and budget.
+            Tell us what you are working towards. and we’ll help you develop a tailored experience aligned with your people, priorities, and budget.
           </p>
           <BookingLink>
             <CalendarDays size={17} aria-hidden="true" />
