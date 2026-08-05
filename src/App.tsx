@@ -272,7 +272,7 @@ function Footer() {
           </a>
           <div className="socials">
             <a
-              href="https://www.instagram.com/lakeshorewellnesscentre"
+              href="https://www.instagram.com/workspacewellness.ie/"
               target="_blank"
               rel="noreferrer"
               aria-label="Workspace Wellness on Instagram"
