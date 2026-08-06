@@ -485,11 +485,11 @@ h3 {
   background:
     linear-gradient(
       90deg,
-      rgba(250, 247, 239, 0.92) 0%,
-      rgba(250, 247, 239, 0.76) 50%,
+      rgba(250, 247, 239, 0.94) 0%,
+      rgba(250, 247, 239, 0.8) 50%,
       rgba(250, 247, 239, 0.9) 100%
     ),
-    url("/images/workplace-wellbeing-journaling.jpg") center 54% / cover no-repeat;
+    url("/images/deloitte-wellness-session.jpg") center 46% / cover no-repeat;
 }
 
 .intro-grid {
