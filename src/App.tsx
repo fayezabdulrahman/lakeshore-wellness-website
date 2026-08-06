@@ -346,8 +346,8 @@ function HomePage() {
             </div>
             <div className="hero-media gsap-image-reveal">
               <img
-                src="/images/workplace-wellbeing-session.jpg"
-                alt="A workplace team taking part in a group wellness session"
+                src="/images/workplace-wellness-event.jpg"
+                alt="A workplace wellness session taking place at a live event"
               />
               <div className="hero-media-note">
                 <span>In person · Online · Hybrid</span>
