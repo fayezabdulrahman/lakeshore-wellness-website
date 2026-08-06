@@ -80,7 +80,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Breathwork for nervous-system regulation",
         summary:
-          "Accessible breathing practices for morning energy, better sleep and moments of overwhelm, led by James Tyrrell.",
+          "Accessible breathing practices for morning energy, better sleep and moments of overwhelm.",
       },
       {
         name: "Meditation for beginners",
