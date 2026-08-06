@@ -22,6 +22,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import {
   calendlyUrl,
   clients,
@@ -788,6 +789,7 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
+      <Analytics />
     </>
   );
 }
