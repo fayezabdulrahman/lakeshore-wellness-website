@@ -42,7 +42,7 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
       >
         <BlogImage
           image={post.featuredImage}
-          sizes="(max-width: 767px) calc(100vw - 40px), 58vw"
+          sizes="(max-width: 767px) calc(100vw - 40px), 42vw"
           eager
         />
       </Link>
