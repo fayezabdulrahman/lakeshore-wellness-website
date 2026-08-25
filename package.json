@@ -3,27 +3,39 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.20 <23"
+  },
   "scripts": {
-    "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "dev": "react-router dev --host 0.0.0.0",
+    "build": "npm run typecheck && react-router build && node scripts/clean-prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --outDir build/client",
+    "typecheck": "react-router typegen && tsc -b",
+    "studio:dev": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build",
+    "studio:deploy": "npm --prefix studio run deploy"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
+    "@portabletext/react": "^8.0.0",
+    "@portabletext/types": "^4.0.2",
+    "@react-router/node": "7.18.2",
+    "@sanity/client": "^8.2.0",
     "@vercel/analytics": "^2.0.1",
     "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "7.18.1"
+    "react-router": "7.18.2",
+    "isbot": "^5"
   },
   "devDependencies": {
+    "@react-router/dev": "7.18.2",
     "@eslint/js": "^9.17.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^22.0.0",
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
-    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",

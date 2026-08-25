@@ -2,14 +2,18 @@
 
 ## Project Structure & Module Organization
 
-- `src/main.tsx` bootstraps React and the browser router.
-- `src/App.tsx` contains routes, page sections, and shared components.
+- `src/root.tsx` defines the document shell and shared site layout.
+- `src/routes/` contains thin React Router route modules for loaders, metadata, and route entry points.
+- `src/pages/` composes complete pages from focused section components.
+- `src/components/layout/` contains site-wide layout components such as the header, footer, logo, and scroll behaviour.
+- `src/components/shared/` contains genuinely reusable UI and shared marketing sections.
+- `src/components/home/` and `src/components/services/` group page-specific sections by feature.
 - `src/data.ts` holds typed service, client, and booking content.
 - `src/styles.css` contains Tailwind imports, design tokens, and site-wide styles.
 - `public/` stores images, logos, and SEO files served from `/`.
-- Root configuration includes `vite.config.ts`, TypeScript configs, ESLint rules, and `vercel.json`.
+- Root configuration includes React Router, Vite, TypeScript, ESLint, and Vercel settings.
 
-Keep reusable content in `data.ts`; move substantial new UI into focused files under `src/`.
+Keep route and page files focused on orchestration. Extract every substantial semantic page section into a descriptively named component, keep section-specific logic with its owning section, and avoid both monolithic page files and needless components for trivial wrappers. Place shared layout and UI in their dedicated folders, and group page-specific sections by feature.
 
 ## Build, Test, and Development Commands
 
