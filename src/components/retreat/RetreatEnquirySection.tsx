@@ -16,7 +16,6 @@ export function RetreatEnquirySection() {
           <a className="button retreat-button-light" href={retreatLinks.enquiry}>
             {content.buttonLabel} <ArrowRight size={17} />
           </a>
-          <span className="retreat-email-note">{content.emailNote}</span>
         </div>
         <div className="retreat-enquiry-details">
           <h3>{content.detailsHeading}</h3>
