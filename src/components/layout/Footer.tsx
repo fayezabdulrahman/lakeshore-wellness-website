@@ -16,6 +16,7 @@ export function Footer() {
           <strong>Explore</strong>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
+          <Link to="/retreat">Retreat</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/privacy">Privacy</Link>
         </div>

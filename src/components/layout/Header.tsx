@@ -47,6 +47,7 @@ export function Header() {
             About
           </Link>
           <NavLink to="/services">Services</NavLink>
+          <NavLink to="/retreat" onClick={() => setOpen(false)}>Retreat</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <BookingLink className="button button-small" />
         </nav>
