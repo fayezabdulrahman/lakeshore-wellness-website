@@ -139,7 +139,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         name: "Financial wellbeing",
         summary:
-          "An interactive session with Shane O’Toole covering budgeting, money mindset, investment, retirement and debt management.",
+          "An interactive session covering budgeting, money mindset, investment, retirement and debt management.",
       },
       {
         name: "Nutrition & mindset optimisation",
