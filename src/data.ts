@@ -11,6 +11,8 @@ import {
 export const calendlyUrl =
   "https://calendly.com/contact-xai/30min?month=2026-07";
 
+export const contactEmail = "YvonneSkellyhealing@gmail.com";
+
 export type Offer = {
   title: string;
   eyebrow: string;

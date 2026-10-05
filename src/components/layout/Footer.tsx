@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Link } from "react-router";
+import { contactEmail } from "../../data";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -22,8 +23,8 @@ export function Footer() {
         </div>
         <div className="footer-links">
           <strong>Contact</strong>
-          <a href="mailto:yvonne@workspacewellness.ie">
-            <Mail size={16} /> yvonne@workspacewellness.ie
+          <a href={`mailto:${contactEmail}`}>
+            <Mail size={16} /> <span>{contactEmail}</span>
           </a>
           <a href="tel:+353870528191">
             <Phone size={16} /> +353 87 052 8192

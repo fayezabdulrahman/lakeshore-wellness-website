@@ -420,6 +420,82 @@
   object-position: center 30%;
 }
 
+.retreat-accommodation {
+  border-top: 1px solid var(--line);
+  background: var(--sage-light);
+}
+
+.retreat-accommodation-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 44px;
+}
+
+.retreat-accommodation-heading h2,
+.retreat-accommodation-heading p {
+  margin-bottom: 0;
+}
+
+.retreat-suite {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  align-items: center;
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  padding-block: 30px;
+}
+
+.retreat-suite:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.retreat-suite h3 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  letter-spacing: -0.025em;
+}
+
+.retreat-suite p {
+  margin-bottom: 0;
+  color: #496253;
+  font-size: 14px;
+}
+
+.retreat-suite .retreat-suite-price {
+  color: var(--forest);
+  font-size: 30px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.retreat-suite-price span {
+  display: block;
+  color: #496253;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.retreat-payment-terms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.retreat-payment-terms h3 {
+  margin-bottom: 12px;
+  font-size: 23px;
+}
+
+.retreat-payment-terms p {
+  margin-bottom: 0;
+  color: #496253;
+  font-size: 14px;
+}
+
 .retreat-enquiry {
   background: var(--forest);
   color: white;
@@ -533,6 +609,20 @@
 
   .retreat-enquiry-details {
     padding-left: 32px;
+  }
+
+  .retreat-accommodation-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .retreat-accommodation-heading p {
+    max-width: 540px;
+  }
+
+  .retreat-suite {
+    grid-template-columns: minmax(0, 1fr) 140px;
+    gap: 20px;
   }
 }
 
@@ -690,6 +780,27 @@
     border-top: 1px solid rgba(255, 255, 255, 0.23);
     border-left: 0;
     padding: 34px 0 0;
+  }
+
+  .retreat-suite {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    padding-block: 26px;
+  }
+
+  .retreat-suite > div {
+    grid-column: 1 / -1;
+  }
+
+  .retreat-suite .retreat-suite-price {
+    grid-column: 1 / -1;
+    font-size: 26px;
+  }
+
+  .retreat-payment-terms {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 32px;
   }
 }
 

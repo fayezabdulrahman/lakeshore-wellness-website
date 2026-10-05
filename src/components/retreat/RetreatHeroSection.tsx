@@ -29,16 +29,32 @@ export function RetreatHeroSection() {
     const video = videoRef.current;
     if (!loadVideo || !video || videoFailed) return;
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !userPaused.current) {
-        void video.play().catch(() => setPlaying(false));
+    // Set the DOM defaults as well as React's property for mobile autoplay.
+    video.defaultMuted = true;
+    video.muted = true;
+    video.setAttribute("muted", "");
+    let inView = false;
+
+    const syncPlayback = () => {
+      if (inView && !document.hidden && !userPaused.current) {
+        void video.play().catch(() => setPlaying(!video.paused));
       } else {
         video.pause();
       }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      syncPlayback();
     });
+    video.addEventListener("canplay", syncPlayback);
+    document.addEventListener("visibilitychange", syncPlayback);
+    window.addEventListener("pageshow", syncPlayback);
     observer.observe(video);
     return () => {
       observer.disconnect();
+      video.removeEventListener("canplay", syncPlayback);
+      document.removeEventListener("visibilitychange", syncPlayback);
+      window.removeEventListener("pageshow", syncPlayback);
       video.pause();
     };
   }, [loadVideo, videoFailed]);
@@ -71,12 +87,13 @@ export function RetreatHeroSection() {
           ref={videoRef}
           src={retreatMedia.video}
           poster={retreatMedia.house.src}
+          autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           aria-hidden="true"
-          onPlay={() => setPlaying(true)}
+          onPlaying={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onError={() => setVideoFailed(true)}
         />

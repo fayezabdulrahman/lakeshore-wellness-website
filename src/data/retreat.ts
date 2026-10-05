@@ -1,3 +1,5 @@
+import { contactEmail } from "../data";
+
 export const retreat = {
   name: "Women’s Recalibration Retreat",
   dates: "15–17 April 2027",
@@ -6,7 +8,7 @@ export const retreat = {
   venue: "Bettystown House & Estate, Co. Meath",
   venueShort: "Bettystown House, Co. Meath",
   duration: "Three days. Two nights. Just for you.",
-  email: "yvonneskellyhealing@gmail.com",
+  email: contactEmail,
   phone: "+353 87 052 8192",
 };
 
@@ -22,7 +24,7 @@ export const retreatContent = {
     headingEmphasis: "Reclaim your vision.",
     description:
       "A three-day residential retreat for women executives, leaders and entrepreneurs. Space to step back, find clarity and move forward with intention.",
-    enquiryLabel: "Enquire about the retreat",
+    enquiryLabel: "Book your place",
     programmeLabel: "Explore the three days",
     caption: "A quieter setting. A fresh perspective.",
     videoControls: {
@@ -93,11 +95,11 @@ export const retreatContent = {
     heading: "Make space",
     headingEmphasis: "for your next chapter.",
     description:
-      "Interested in joining us? Get in touch with Yvonne to ask a question, discuss whether the retreat is right for you, or receive pricing and booking details when available.",
-    buttonLabel: "Enquire with Yvonne",
+      "Ready to join us? Email Yvonne with your preferred suite to book your place. You’re also welcome to ask a question or discuss whether the retreat is right for you.",
+    buttonLabel: "Reserve your place",
     detailsHeading: "A few details for your diary",
     note:
-      "This retreat is currently being planned. Dates, venue, programme and pricing will be confirmed before bookings are taken.",
+      "Bookings are arranged directly with Yvonne by email. A 35% deposit secures your place.",
   },
 };
 
@@ -180,14 +182,14 @@ export const retreatDays = [
 
 export const retreatInclusions = [
   {
-    title: "A room of your own",
+    title: "A place to unwind",
     description:
-      "Two nights in a single-occupancy ensuite room, with exclusive access to the house and estate.",
+      "Two nights in a single or shared twin ensuite room, with exclusive access to the house and estate.",
   },
   {
     title: "Thoughtfully prepared meals",
     description:
-      "All meals, including a private dining experience with Michelin-trained chef Aidan Ryan.",
+      "All meals provided, locally sourced farm to table, organic where possible, including a private dining experience with Michelin-trained chef Aidan Ryan.",
   },
   {
     title: "Space to reset",
@@ -210,3 +212,41 @@ export const retreatInclusions = [
       "Pre- and post-retreat care consultations, and a personalised handcrafted gift on arrival.",
   },
 ];
+
+export const retreatAccommodation = {
+  heading: "Your space to rest.",
+  headingEmphasis: "Your retreat investment.",
+  description:
+    "Choose the accommodation that feels right for you. All prices are in euro, per person, for the three-day residential retreat.",
+  suites: [
+    {
+      name: "Master Sanctuary Suite",
+      description: "Premium Executive Single Ensuite",
+      price: "€1,620",
+    },
+    {
+      name: "Sanctuary Suite",
+      description: "Executive Single Ensuite",
+      price: "€1,530",
+    },
+    {
+      name: "Co-Leader Suite",
+      description: "Collaborative Shared Twin Ensuite",
+      price: "€1,440",
+    },
+  ],
+  paymentTerms: [
+    {
+      title: "Secure your place",
+      description: "A 35% deposit secures your place, with the full balance due by 25 February 2027.",
+    },
+    {
+      title: "Save €50",
+      description: "Pay in full upon booking and save €50 per person.",
+    },
+    {
+      title: "Plan your payments",
+      description: "A flexible payment plan is available upon request. Email Yvonne to discuss your options.",
+    },
+  ],
+};

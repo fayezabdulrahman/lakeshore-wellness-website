@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { RetreatAccommodationSection } from "../components/retreat/RetreatAccommodationSection";
 import { RetreatEnquirySection } from "../components/retreat/RetreatEnquirySection";
 import { RetreatHeroSection } from "../components/retreat/RetreatHeroSection";
 import { RetreatHostSection } from "../components/retreat/RetreatHostSection";
@@ -20,6 +21,7 @@ export function RetreatPage() {
       <RetreatVenueSection />
       <RetreatInclusionsSection />
       <RetreatHostSection />
+      <RetreatAccommodationSection />
       <RetreatEnquirySection />
     </main>
   );
