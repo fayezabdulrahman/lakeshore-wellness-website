@@ -35,12 +35,12 @@ export const retreatContent = {
     },
   },
   details: {
-    datesLabel: "Proposed dates",
-    settingLabel: "Proposed setting",
+    datesLabel: "Dates",
+    settingLabel: "Your setting",
     durationLabel: "Your time away",
     arrivalLabel: "Arrival",
     departureLabel: "Departure",
-    venueLabel: "Proposed venue",
+    venueLabel: "Venue",
   },
   introduction: {
     heading: "For the woman who",
@@ -62,7 +62,7 @@ export const retreatContent = {
       "An outline of the planned experience. The final programme will be shared ahead of the retreat.",
   },
   venue: {
-    eyebrow: "The proposed setting",
+    eyebrow: "The setting",
     heading: "A little closer to nature.",
     headingEmphasis: "A little closer to yourself.",
     description:
@@ -77,7 +77,7 @@ export const retreatContent = {
     headingEmphasis: "in every detail.",
     description:
       "A residential experience designed to give you time, comfort and the freedom to be present.",
-    note: "Venue, facilitators and activities are subject to final confirmation.",
+    note: "",
   },
   host: {
     eyebrow: "Your host · Yvonne Skelly",
