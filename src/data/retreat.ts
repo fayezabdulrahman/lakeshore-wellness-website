@@ -2,12 +2,12 @@ import { contactEmail } from "../data";
 
 export const retreat = {
   name: "Women’s Recalibration Retreat",
-  dates: "15–17 April 2027",
-  arrival: "12pm, Thursday 15 April",
+  dates: "16–17 April 2027",
+  arrival: "12pm, Friday 16 April",
   departure: "3pm, Saturday 17 April",
   venue: "Bettystown House & Estate, Co. Meath",
   venueShort: "Bettystown House, Co. Meath",
-  duration: "Three days. Two nights. Just for you.",
+  duration: "Two days. One night. Just for you.",
   email: contactEmail,
   phone: "+353 87 052 8192",
 };
@@ -23,9 +23,9 @@ export const retreatContent = {
     heading: "Shed the exhaustion.",
     headingEmphasis: "Reclaim your vision.",
     description:
-      "A three-day residential retreat for women executives, leaders and entrepreneurs. Space to step back, find clarity and move forward with intention.",
+      "A two-day residential retreat for women executives, leaders and entrepreneurs. Space to step back, find clarity and move forward with intention.",
     enquiryLabel: "Book your place",
-    programmeLabel: "Explore the three days",
+    programmeLabel: "Explore the two days",
     caption: "A quieter setting. A fresh perspective.",
     videoControls: {
       pauseLabel: "Pause",
@@ -57,7 +57,7 @@ export const retreatContent = {
     heading: "Arrive as you are.",
     headingEmphasis: "Leave with direction.",
     description:
-      "Three days, each with its own intention. A gentle progression from slowing down to reconnecting and looking ahead.",
+      "Two days, each with its own intention. A gentle progression from reconnecting to looking ahead.",
     note:
       "An outline of the planned experience. The final programme will be shared ahead of the retreat.",
   },
@@ -106,7 +106,7 @@ export const retreatContent = {
 export const retreatSeo = {
   title: "Retreat for Women Leaders — Workspace Wellness",
   description:
-    "Discover the Women’s Recalibration Retreat: a planned three-day residential experience for women executives, leaders and entrepreneurs in County Meath.",
+    "Discover the Women’s Recalibration Retreat: a planned two-day residential experience for women executives, leaders and entrepreneurs in County Meath.",
   image: "/og.png",
 };
 
@@ -149,16 +149,6 @@ export const retreatMedia = {
 
 export const retreatDays = [
   {
-    day: "Thursday",
-    date: "15 April",
-    title: "Decompression",
-    subtitle: "Arrive. Exhale. Slow down.",
-    description:
-      "Step away from notifications and to-do lists. The first day is about arriving fully, settling into your surroundings and giving yourself permission to slow down.",
-    detail:
-      "A gentle beginning, with space to unwind, connect and leave the demands of everyday life at the door.",
-  },
-  {
     day: "Friday",
     date: "16 April",
     title: "Somatic reset & integration",
@@ -184,7 +174,7 @@ export const retreatInclusions = [
   {
     title: "A place to unwind",
     description:
-      "Two nights in a single or shared twin ensuite room, with exclusive access to the house and estate.",
+      "One night in a single or shared twin ensuite room, with exclusive access to the house and estate.",
   },
   {
     title: "Thoughtfully prepared meals",
@@ -217,7 +207,7 @@ export const retreatAccommodation = {
   heading: "Your space to rest.",
   headingEmphasis: "Your retreat investment.",
   description:
-    "Choose the accommodation that feels right for you. All prices are in euro, per person, for the three-day residential retreat.",
+    "Choose the accommodation that feels right for you. All prices are in euro, per person, for the two-day residential retreat.",
   suites: [
     {
       name: "Master Sanctuary Suite",
