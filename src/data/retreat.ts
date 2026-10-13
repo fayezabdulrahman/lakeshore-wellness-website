@@ -59,7 +59,7 @@ export const retreatContent = {
     description:
       "Three days, each with its own intention. A gentle progression from slowing down to reconnecting and looking ahead.",
     note:
-      "An outline of the experience. The final programme will be shared ahead of the retreat.",
+      "",
   },
   venue: {
     eyebrow: "The setting",
