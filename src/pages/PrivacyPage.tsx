@@ -1,3 +1,5 @@
+import { contactEmail } from "../data";
+
 export function PrivacyPage() {
   return (
     <main className="legal-page">
@@ -37,8 +39,8 @@ export function PrivacyPage() {
           <h2>Questions</h2>
           <p>
             For privacy questions, email{" "}
-            <a href="mailto:yvonne@workspacewellness.ie">
-              yvonne@workspacewellness.ie
+            <a href={`mailto:${contactEmail}`}>
+              {contactEmail}
             </a>
             .
           </p>

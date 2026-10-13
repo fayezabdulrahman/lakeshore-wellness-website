@@ -15,6 +15,7 @@ export default {
     return [
       "/",
       "/services",
+      "/retreat",
       "/privacy",
       "/blog",
       "/sitemap.xml",
