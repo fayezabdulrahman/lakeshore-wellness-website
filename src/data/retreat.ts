@@ -59,7 +59,7 @@ export const retreatContent = {
     description:
       "Three days, each with its own intention. A gentle progression from slowing down to reconnecting and looking ahead.",
     note:
-      "An outline of the planned experience. The final programme will be shared ahead of the retreat.",
+      "An outline of the experience. The final programme will be shared ahead of the retreat.",
   },
   venue: {
     eyebrow: "The setting",
@@ -72,7 +72,7 @@ export const retreatContent = {
     travelNote: "Approximately 35 minutes from Dublin Airport",
   },
   inclusions: {
-    eyebrow: "The planned experience",
+    eyebrow: "The experience",
     heading: "Considered care,",
     headingEmphasis: "in every detail.",
     description:
@@ -106,7 +106,7 @@ export const retreatContent = {
 export const retreatSeo = {
   title: "Retreat for Women Leaders — Workspace Wellness",
   description:
-    "Discover the Women’s Recalibration Retreat: a planned three-day residential experience for women executives, leaders and entrepreneurs in County Meath.",
+    "Discover the Women’s Recalibration Retreat: a three-day residential experience for women executives, leaders and entrepreneurs in County Meath.",
   image: "/og.png",
 };
 
