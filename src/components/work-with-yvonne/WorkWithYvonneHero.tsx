@@ -11,7 +11,7 @@ export function WorkWithYvonneHero() {
             Your ambition should not cost you <em>your wellbeing.</em>
           </h1>
           <p className="yvonne-hero-lead motion-intro">
-            A focused three-part intensive for high-performing women who are
+            A focused one-to-one three-part intensive for high-performing women who are
             ready to step out of survival mode and lead from clarity.
           </p>
           <div className="yvonne-hero-actions motion-intro">
