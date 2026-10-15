@@ -9,7 +9,6 @@ const pillars = [
       "A private space for honest reflection, fresh perspective and practical change.",
     image: "/images/work-with-yvonne/yvonne-outdoors.jpg",
     imageAlt: "Yvonne enjoying time in the mountains",
-    imagePosition: "14% center",
   },
   {
     name: "Movement",
@@ -21,7 +20,6 @@ const pillars = [
       "We begin wherever you are and shape each conversation around what you need now.",
     image: "/images/work-with-yvonne/movement-in-nature.jpg",
     imageAlt: "Walking through an open mountain landscape",
-    imagePosition: "center 42%",
   },
   {
     name: "Stillness",
@@ -33,7 +31,6 @@ const pillars = [
       "Your leadership, nervous system, physical energy and ambition are considered together.",
     image: "/images/work-with-yvonne/stillness-sunset.jpg",
     imageAlt: "A calm ocean horizon at sunset",
-    imagePosition: "center 62%",
   },
 ];
 
@@ -76,7 +73,6 @@ export function WellnessPillarsSection() {
                       src={pillar.image}
                       alt={pillar.imageAlt}
                       loading="lazy"
-                      style={{ objectPosition: pillar.imagePosition }}
                     />
                   </div>
                   <div>
