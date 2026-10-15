@@ -21,7 +21,14 @@ export function RetreatAccommodationSection() {
           {retreatAccommodation.suites.map((suite) => (
             <article className="retreat-suite" key={suite.name}>
               <div>
-                <h3>{suite.name}</h3>
+                <div className="retreat-suite-title">
+                  <h3>{suite.name}</h3>
+                  {suite.availability && (
+                    <span className="retreat-suite-status">
+                      {suite.availability}
+                    </span>
+                  )}
+                </div>
                 <p>{suite.description}</p>
               </div>
               <p className="retreat-suite-price">

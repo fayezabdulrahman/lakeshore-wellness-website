@@ -223,6 +223,7 @@ export const retreatAccommodation = {
       name: "Master Sanctuary Suite",
       description: "Premium Executive Single Ensuite",
       price: "€1,620",
+      availability: "Sold out",
     },
     {
       name: "Sanctuary Suite",
