@@ -1,0 +1,690 @@
+.yvonne-page {
+  --yvonne-blue: #c7ddeb;
+  --yvonne-space: clamp(72px, 8vw, 118px);
+}
+
+.yvonne-page h2,
+.yvonne-page h3 {
+  text-wrap: balance;
+}
+
+.yvonne-page h2 em,
+.yvonne-page h3 em {
+  color: #527460;
+  font-weight: 500;
+}
+
+.yvonne-page a:focus-visible,
+.yvonne-page summary:focus-visible {
+  outline: 3px solid #83a994;
+  outline-offset: 5px;
+}
+
+.yvonne-section {
+  padding-block: var(--yvonne-space);
+}
+
+.yvonne-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 6vw, 82px) 0 clamp(72px, 8vw, 112px);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(239, 217, 141, 0.62), transparent 25%),
+    radial-gradient(circle at 92% 18%, rgba(199, 221, 235, 0.8), transparent 31%),
+    var(--ivory);
+}
+
+.yvonne-hero::before {
+  position: absolute;
+  top: 13%;
+  right: -6%;
+  width: clamp(250px, 30vw, 500px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(23, 59, 43, 0.12);
+  border-radius: 50%;
+  content: "";
+}
+
+.yvonne-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(350px, 0.82fr);
+  align-items: center;
+  gap: clamp(56px, 8vw, 124px);
+}
+
+.yvonne-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.yvonne-hero h1 {
+  max-width: 760px;
+  margin: 0 0 30px;
+  font-size: clamp(52px, 5.7vw, 82px);
+  letter-spacing: -0.058em;
+  line-height: 0.94;
+}
+
+.yvonne-hero h1 em {
+  color: #527460;
+  font-weight: 500;
+}
+
+.yvonne-hero-lead {
+  max-width: 610px;
+  margin-bottom: 34px;
+  color: #486253;
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.7;
+}
+
+.yvonne-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.yvonne-text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid rgba(23, 59, 43, 0.28);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yvonne-text-link svg {
+  transition: transform 220ms ease;
+}
+
+.yvonne-text-link:hover svg {
+  transform: translateY(4px);
+}
+
+.yvonne-portrait {
+  position: relative;
+  min-width: 0;
+  padding: 36px 34px 58px 0;
+  transform-origin: center;
+}
+
+.yvonne-portrait::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 24px;
+  left: 36px;
+  border-radius: 210px 210px 28px 28px;
+  background: var(--yvonne-blue);
+  content: "";
+}
+
+.yvonne-portrait-frame {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border-radius: 200px 200px 24px 24px;
+  background: #d9e7dd;
+}
+
+.yvonne-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
+  transition: transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.yvonne-portrait:hover img {
+  transform: scale(1.035);
+}
+
+.yvonne-portrait-note {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--ivory);
+  box-shadow: 0 16px 38px rgba(23, 59, 43, 0.13);
+}
+
+.yvonne-portrait-note span {
+  padding: 13px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.yvonne-portrait-note span + span {
+  border-left: 1px solid var(--line);
+}
+
+.yvonne-intensive {
+  overflow: hidden;
+  background: var(--forest);
+  color: white;
+}
+
+.yvonne-intensive-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: clamp(60px, 9vw, 140px);
+}
+
+.yvonne-intensive .eyebrow {
+  color: var(--sage);
+}
+
+.yvonne-intensive h2,
+.yvonne-pillars-heading h2,
+.yvonne-final-cta h2 {
+  margin: 0;
+  font-size: clamp(44px, 5vw, 72px);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.yvonne-intensive h2 em {
+  color: #c7ddeb;
+}
+
+.yvonne-intensive-copy {
+  align-self: end;
+}
+
+.yvonne-intensive-copy p {
+  max-width: 590px;
+  color: #c9d8ce;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.yvonne-intensive-copy .yvonne-lead {
+  color: white;
+  font-family: var(--serif);
+  font-size: clamp(21px, 2.2vw, 28px);
+  line-height: 1.45;
+}
+
+.yvonne-intensive-copy .button {
+  margin-top: 18px;
+  border-color: white;
+  background: white;
+  color: var(--forest-deep);
+}
+
+.yvonne-intensive-copy .button:hover {
+  background: var(--yvonne-blue);
+}
+
+.yvonne-pillars-section {
+  background:
+    radial-gradient(circle at 92% 6%, rgba(239, 217, 141, 0.38), transparent 22%),
+    var(--ivory);
+}
+
+.yvonne-pillars-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: end;
+  gap: clamp(48px, 9vw, 138px);
+}
+
+.yvonne-pillars-heading h2 {
+  max-width: 790px;
+}
+
+.yvonne-pillars-heading > p {
+  margin: 0 0 8px;
+  color: #536a5c;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.yvonne-pillars {
+  display: grid;
+  min-height: 540px;
+  grid-template-columns: 1.8fr 0.6fr 0.6fr;
+  grid-auto-flow: dense;
+  margin-top: clamp(46px, 6vw, 72px);
+  overflow: hidden;
+  border: 1px solid rgba(23, 59, 43, 0.18);
+  border-radius: 28px;
+  background: white;
+  transition: grid-template-columns 520ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.yvonne-pillars:has(.yvonne-pillar:nth-child(2)[open]) {
+  grid-template-columns: 0.6fr 1.8fr 0.6fr;
+}
+
+.yvonne-pillars:has(.yvonne-pillar:nth-child(3)[open]) {
+  grid-template-columns: 0.6fr 0.6fr 1.8fr;
+}
+
+.yvonne-pillar {
+  min-width: 0;
+  border-right: 1px solid rgba(23, 59, 43, 0.16);
+  background: #f7f4eb;
+  transition: background-color 320ms ease;
+}
+
+.yvonne-pillar:nth-child(2) {
+  background: var(--yvonne-blue);
+}
+
+.yvonne-pillar:nth-child(3) {
+  border-right: 0;
+  background: #d8e4d7;
+}
+
+.yvonne-pillar[open] {
+  background: var(--forest);
+  color: white;
+}
+
+.yvonne-pillar summary {
+  display: grid;
+  min-height: 96px;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.yvonne-pillar summary::-webkit-details-marker {
+  display: none;
+}
+
+.yvonne-pillar:not([open]) summary {
+  grid-template-columns: minmax(0, 1fr) 28px;
+  gap: 8px;
+  padding-inline: 18px;
+}
+
+.yvonne-pillar-name {
+  overflow: visible;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 500;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.yvonne-pillar:not([open]) .yvonne-pillar-name {
+  font-size: clamp(19px, 1.7vw, 25px);
+}
+
+.yvonne-pillar-toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.yvonne-pillar:not([open]) .yvonne-pillar-toggle {
+  width: 28px;
+  height: 28px;
+  flex-basis: 28px;
+}
+
+.yvonne-pillar-toggle::before,
+.yvonne-pillar-toggle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.yvonne-pillar-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: transform 220ms ease;
+}
+
+.yvonne-pillar[open] .yvonne-pillar-toggle::after {
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.yvonne-pillar-content {
+  display: grid;
+  min-height: 444px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(180px, 0.92fr);
+  align-items: stretch;
+  gap: clamp(24px, 3vw, 42px);
+  padding: 24px clamp(28px, 3.3vw, 46px) 42px;
+}
+
+.yvonne-pillar-copy {
+  align-self: center;
+}
+
+.yvonne-pillar-copy h3 {
+  max-width: 520px;
+  margin: 0 0 16px;
+  font-size: clamp(34px, 3.6vw, 52px);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.yvonne-pillar-copy > p {
+  max-width: 590px;
+  margin-bottom: 26px;
+  color: #c9d8ce;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.yvonne-pillar-copy strong {
+  width: fit-content;
+  border-top: 1px solid rgba(255, 255, 255, 0.34);
+  padding-top: 14px;
+  color: #dce9df;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.yvonne-pillar-support {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: minmax(190px, 1fr) auto;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.yvonne-pillar-image {
+  overflow: hidden;
+  border-radius: 17px 17px 0 0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.yvonne-pillar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.yvonne-pillar-support:hover img {
+  transform: scale(1.04);
+}
+
+.yvonne-pillar-support > div:last-child {
+  padding: 18px 20px 20px;
+}
+
+.yvonne-pillar-support span {
+  display: block;
+  margin-bottom: 7px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.yvonne-pillar-support p {
+  margin: 0;
+  color: #c9d8ce;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.yvonne-final-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--forest-deep);
+  color: white;
+}
+
+.yvonne-final-cta::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 35, 24, 0.97) 0%,
+    rgba(9, 35, 24, 0.91) 46%,
+    rgba(9, 35, 24, 0.66) 100%
+  );
+  content: "";
+}
+
+.yvonne-final-cta::after {
+  position: absolute;
+  z-index: -2;
+  inset: -2%;
+  background: url("/images/work-with-yvonne/stillness-sunset.jpg") center 61% / cover no-repeat;
+  content: "";
+  filter: saturate(0.78) contrast(1.06);
+}
+
+.yvonne-cta-mark {
+  position: absolute;
+  right: clamp(24px, 6vw, 100px);
+  bottom: clamp(24px, 5vw, 72px);
+  width: clamp(90px, 11vw, 170px);
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.yvonne-final-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  align-items: end;
+  gap: clamp(48px, 7vw, 100px);
+}
+
+.yvonne-final-cta .eyebrow {
+  color: var(--sage);
+}
+
+.yvonne-final-cta h2 {
+  max-width: 920px;
+}
+
+.yvonne-final-copy p {
+  margin-bottom: 28px;
+  color: #c6d5cb;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.yvonne-button-light {
+  border-color: white;
+  background: white;
+  color: var(--forest-deep);
+}
+
+.yvonne-button-light:hover {
+  border-color: var(--yvonne-blue);
+  background: var(--yvonne-blue);
+  color: var(--forest-deep);
+}
+
+@media (max-width: 1080px) {
+  .yvonne-hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    gap: 54px;
+  }
+
+  .yvonne-hero h1 {
+    font-size: clamp(48px, 6vw, 68px);
+  }
+
+  .yvonne-pillar summary {
+    padding-inline: 24px;
+  }
+
+  .yvonne-pillar-name {
+    font-size: 23px;
+  }
+
+}
+
+@media (max-width: 960px) {
+  .yvonne-hero-grid,
+  .yvonne-intensive-grid,
+  .yvonne-pillars-heading,
+  .yvonne-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yvonne-hero-copy {
+    max-width: 700px;
+  }
+
+  .yvonne-portrait {
+    width: min(520px, 92%);
+    margin-inline: auto;
+  }
+
+  .yvonne-intensive-copy {
+    max-width: 670px;
+  }
+
+  .yvonne-pillars-heading > p {
+    max-width: 560px;
+  }
+
+  .yvonne-pillars {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    border-radius: 22px;
+  }
+
+  .yvonne-pillars:has(.yvonne-pillar:nth-child(2)[open]),
+  .yvonne-pillars:has(.yvonne-pillar:nth-child(3)[open]) {
+    grid-template-columns: 1fr;
+  }
+
+  .yvonne-pillar,
+  .yvonne-pillar:nth-child(3) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 59, 43, 0.16);
+  }
+
+  .yvonne-pillar:last-child {
+    border-bottom: 0;
+  }
+
+  .yvonne-pillar-content {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .yvonne-page {
+    --yvonne-space: 72px;
+  }
+
+  .yvonne-hero {
+    padding-top: 48px;
+  }
+
+  .yvonne-hero h1 {
+    font-size: clamp(42px, 11.8vw, 54px);
+    line-height: 0.98;
+  }
+
+  .yvonne-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .yvonne-hero-actions .button,
+  .yvonne-text-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .yvonne-portrait {
+    width: 100%;
+    padding: 24px 22px 50px 0;
+  }
+
+  .yvonne-portrait::before {
+    left: 24px;
+    border-radius: 160px 160px 22px 22px;
+  }
+
+  .yvonne-portrait-frame {
+    border-radius: 150px 150px 20px 20px;
+  }
+
+  .yvonne-portrait-note span {
+    padding-inline: 12px;
+    font-size: 9px;
+  }
+
+  .yvonne-intensive h2,
+  .yvonne-pillars-heading h2,
+  .yvonne-final-cta h2 {
+    font-size: clamp(38px, 10.5vw, 50px);
+  }
+
+  .yvonne-intensive-copy .button,
+  .yvonne-final-copy .button {
+    width: 100%;
+  }
+
+  .yvonne-pillar summary {
+    min-height: 90px;
+    padding: 24px 22px;
+  }
+
+  .yvonne-pillar-content {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 22px 22px 38px;
+  }
+
+  .yvonne-pillar-copy h3 {
+    font-size: 34px;
+  }
+
+  .yvonne-pillar-support {
+    grid-template-rows: auto auto;
+  }
+
+  .yvonne-pillar-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .yvonne-final-copy {
+    padding-right: 24px;
+  }
+
+  .yvonne-final-cta::before {
+    background: rgba(9, 35, 24, 0.88);
+  }
+
+  .yvonne-final-cta::after {
+    background-position: center 66%;
+  }
+}

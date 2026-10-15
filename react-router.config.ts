@@ -15,6 +15,7 @@ export default {
     return [
       "/",
       "/services",
+      "/work-with-yvonne",
       "/retreat",
       "/privacy",
       "/blog",

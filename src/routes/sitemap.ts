@@ -12,7 +12,14 @@ function escapeXml(value: string) {
 
 export async function loader() {
   const posts = await getPublishedPosts();
-  const staticUrls = ["", "/services", "/retreat", "/blog", "/privacy"];
+  const staticUrls = [
+    "",
+    "/services",
+    "/work-with-yvonne",
+    "/retreat",
+    "/blog",
+    "/privacy",
+  ];
   const urls: Array<{ loc: string; lastmod?: string }> = [
     ...staticUrls.map((path) => ({ loc: `${siteUrl}${path}` })),
     ...posts.map((post) => ({
